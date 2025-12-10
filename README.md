@@ -1,2 +1,2 @@
-# ars-score
-Accessibility, Regulation &amp; Structure (score) for assessing the putative functional consequences of somatic SNVs, especially in lncRNAs.
+# ARS-score
+Accessibility, Regulation &amp; Structure (ARS) score for assessing the putative functional consequences of somatic SNVs, especially in lncRNAs.
