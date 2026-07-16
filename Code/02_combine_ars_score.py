@@ -15,8 +15,8 @@ OUTDIR = os.path.join(DATA_DIR, 'VariantImpactScore')
 os.makedirs(OUTDIR, exist_ok=True)
 
 # Input files
-SNV_PATH = os.path.join(DATA_DIR, 'Main_data/562_data/save_folder/master_table/pca+_447_samples_snv_v6.csv')
-DICT_PATH = os.path.join(DATA_DIR, 'Driver_lncRNA/driver_lncRNA_dict.pkl')
+SNV_PATH = os.path.join(DATA_DIR, 'pca+_447_samples_snv_v6.csv')
+DICT_PATH = os.path.join(DATA_DIR, 'driver_lncRNA_dict.pkl')
 MTV_DLNC_PATH = os.path.join(DATA_DIR, 'Driver_lncRNA/multivariate_dlncrna_esults.pkl')
 MTV_SNV_PATH = os.path.join(DATA_DIR, 'Driver_lncRNA/multivariate_snv_esults.pkl')
 
