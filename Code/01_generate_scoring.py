@@ -14,11 +14,11 @@ from tqdm import tqdm
 PROJECT_FOLDER = './' # Assuming running from repo root
 DATA_DIR = os.path.join(PROJECT_FOLDER, 'Data')
 
-SNV_PATH = os.path.join(DATA_DIR, 'Main_data/562_data/save_folder/master_table/pca+_447_samples_snv_v6.csv')
-DICT_PATH = os.path.join(DATA_DIR, 'Driver_lncRNA/driver_lncRNA_dict.pkl')
-GTF_PATH = os.path.join(DATA_DIR, 'lncRNA/gencode.v47.long_noncoding_RNAs.gtf')
-FA_PATH = os.path.join(DATA_DIR, 'lncRNA/GRCh38.primary_assembly.genome.fa')
-MANE_PATH = os.path.join(DATA_DIR, 'RNAstructure/MANE_lncRNAs__MANE-Select__with_ENST_ENSG_IDs.csv')
+SNV_PATH = os.path.join(DATA_DIR, 'pca+_447_samples_snv_v6.csv')
+DICT_PATH = os.path.join(DATA_DIR, 'driver_lncRNA_dict.pkl')
+GTF_PATH = os.path.join(DATA_DIR, 'Genomic_ref/gencode.v47.long_noncoding_RNAs.gtf')
+FA_PATH = os.path.join(DATA_DIR, 'Genomic_ref/GRCh38.primary_assembly.genome.fa')
+MANE_PATH = os.path.join(DATA_DIR, 'Genomic_ref/MANE_lncRNAs__MANE-Select__with_ENST_ENSG_IDs.csv')
 
 # Output directories
 OUTDIR = os.path.join(DATA_DIR, 'RNAstructure/input/')
