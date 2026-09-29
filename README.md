@@ -129,13 +129,13 @@ pip install -r requirements.txt
 
 ### Typical install time
 
-Under **2 minutes** on a normal desktop computer with a broadband connection. Installing the dependencies into a clean virtual environment took about 20 seconds in our tests.
+Under **2 minutes** on a normal desktop computer with a broadband connection. Installing the dependencies into a clean virtual environment took about 1 minute in our tests.
 
 ---
 
 ## 3. Demo
 
-A small, fully **simulated** dataset is provided in [`demo/Data`](demo/Data): 60 SNVs in three synthetic lncRNAs on a 20 kb synthetic contig, with simulated RNAsnp, RNAplfold, regulatory and TF-motif results. It contains no patient data. It can be regenerated with `python demo/make_demo_data.py` (fixed random seed).
+A small, fully **simulated** dataset is provided. For a privacy, it contains no patient data. 
 
 ### Instructions to run on the demo data
 
