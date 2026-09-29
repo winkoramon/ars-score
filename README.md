@@ -72,11 +72,7 @@ ars-score/
 The software is pure Python and runs on Linux and macOS.
 
 | Tested on | Version |
-|---|---|
-| Linux | Ubuntu 24.04 LTS |
-| macOS | *(add the macOS version you used)* |
-
-Windows is not officially supported because `pysam` does not provide native Windows builds; Windows users can run the pipeline via WSL2.
+| macOS | 15.7.7 
 
 ### Software dependencies
 
@@ -97,8 +93,8 @@ The structural and accessibility inputs used in the manuscript were produced wit
 
 | Tool | Used for | Version |
 |---|---|---|
-| RNAsnp | SNV effects on RNA secondary structure | *(add version)* |
-| ViennaRNA (RNAplfold) | Base-pairing / accessibility probabilities | *(add version)* |
+| RNAsnp | SNV effects on RNA secondary structure |
+| ViennaRNA (RNAplfold) | Base-pairing / accessibility probabilities |
 
 ### Hardware
 
