@@ -2,6 +2,10 @@
 
 Developed by **Korawich Uthayopas**, Ancestry and Health Genomics Laboratory, University of Sydney.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)
+
+
 The **Accessibility, Regulation, and Structure (ARS)** framework is designed to identify and prioritize functional somatic variants within long non-coding RNAs (lncRNAs), specifically optimized for geo-ancestrally diverse prostate cancer cohorts.
 
 ## Framework Components
