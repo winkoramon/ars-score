@@ -252,9 +252,9 @@ This project is released under the [MIT License](LICENSE), an [Open Source Initi
 
 If you use this pipeline, please cite:
 
-> Uthayopas, K., *et al.* (2026). *[Manuscript title].* *[Journal]*. DOI: *[to be added]*
-
+> Uthayopas, K., *et al.* (2026). Currently under revision
+> 
 ## Contact
 
-For questions or issues, please open an [issue](https://github.com/winkoramon/ars-score/issues) or contact Korawich Uthayopas (Ancestry and Health Genomics Laboratory, University of Sydney).
+For questions or issues, please open an [issue](https://github.com/winkoramon/ars-score/issues) or contact Korawich Uthayopas (Ancestry and Health Genomics Laboratory, University of Sydney): korawich.uthayopas@sydney.edu.au
 
