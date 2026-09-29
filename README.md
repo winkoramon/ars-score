@@ -5,10 +5,10 @@ Developed by **Korawich Uthayopas**, Ancestry and Health Genomics Laboratory, Un
 The **Accessibility, Regulation, and Structure (ARS)** framework is designed to identify and prioritize functional somatic variants within long non-coding RNAs (lncRNAs), specifically optimized for geo-ancestrally diverse prostate cancer cohorts.
 
 ## Framework Components
-The pipeline calculates the **Driver Variant Impact Score (DVIS)** by integrating:
-- **Structure (S):** Structural disruption probabilities via RNAsnp (global/local p-values).
+The pipeline calculates the **Accessibility, Regulation, and Structure (ARS) score** by integrating:
 - **Accessibility (A):** Changes in RNA base-pairing probabilities via RNAplfold.
 - **Regulation (R):** Overlap with regulatory elements (promoters, enhancers) and strong TF motif disruptions (e.g., AR, FOXA1, HOXB13).
+- **Structure (S):** Structural disruption probabilities via RNAsnp (global/local p-values).
 
 ## Key Features
 - Automated representative transcript selection (MANE-Select priority).
