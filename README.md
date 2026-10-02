@@ -1,9 +1,9 @@
-# ARS Pipeline: A Framework for Functional lncRNA Variant Prioritization
+# ARS Pipeline: A Framework for Functional lncRNA Variant Prioritisation
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)
 
-Developed by **Korawich Uthayopas**, Ancestry and Health Genomics Laboratory, University of Sydney.
+Developed by **Korawich Uthayopas**, Ancestry and Health Genomics Laboratory, University of Sydney. (korawich.uthayopas@sydney.edu.au)
 
 The **Accessibility, Regulation and Structure (ARS)** framework identifies and prioritizes functional somatic variants within long non-coding RNAs (lncRNAs). It was designed for, and applied to, geo-ancestrally diverse prostate cancer cohorts.
 
@@ -77,7 +77,7 @@ The software is pure Python and runs on Linux and macOS.
 | Tested on | Version |
 |---|---|
 | Linux | Ubuntu 24.04 LTS |
-| macOS | *(add the macOS version you used)* |
+| macOS | Sequoia 15.7.7 |
 
 Windows is not officially supported because `pysam` does not provide native Windows builds; Windows users can run the pipeline via WSL2.
 
@@ -100,8 +100,8 @@ The structural and accessibility inputs used in the manuscript were produced wit
 
 | Tool | Used for | Version |
 |---|---|---|
-| RNAsnp | SNV effects on RNA secondary structure | *(add version)* |
-| ViennaRNA (RNAplfold) | Base-pairing / accessibility probabilities | *(add version)* |
+| RNAsnp | SNV effects on RNA secondary structure | 
+| ViennaRNA (RNAplfold) | Base-pairing / accessibility probabilities | 
 
 ### Hardware
 
@@ -142,7 +142,7 @@ Under **2 minutes** on a normal desktop computer with a broadband connection. In
 
 ## 3. Demo
 
-A small, fully **simulated** dataset is provided in [`demo/Data`](demo/Data): 60 SNVs in three synthetic lncRNAs on a 20 kb synthetic contig, with simulated RNAsnp, RNAplfold, regulatory and TF-motif results. It contains no patient data. It can be regenerated with `python demo/make_demo_data.py` (fixed random seed).
+A small, fully **simulated** dataset is provided in [`demo/Data`](demo/Data): 60 SNVs in three synthetic lncRNAs on a 20 kb synthetic contig, with simulated RNAsnp, RNAplfold, regulatory and TF-motif results. It contains no patient data. 
 
 ### Instructions to run on the demo data
 
@@ -170,21 +170,9 @@ Two files are written to `demo/output/`:
 | `ARS_scored_driver_variants.csv` | One row per SNV with the input columns plus `lncRNA_ancestry_type`, `snv_ancestry_type` and `ARS_Score` |
 | `ars_distribution_1000dpi.png` | Histogram of ARS scores |
 
-For the demo, the 60 SNVs have ARS scores from 0 to 8 (median 3) with the following distribution:
-
-| ARS score | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
-|---|---|---|---|---|---|---|---|---|---|
-| Number of SNVs | 6 | 1 | 16 | 12 | 14 | 7 | 2 | 1 | 1 |
-
-You can check your result against the reference file:
-
-```bash
-python -c "import pandas as pd; a=pd.read_csv('demo/output/ARS_scored_driver_variants.csv'); b=pd.read_csv('demo/expected_output_ARS_scored_driver_variants.csv'); print('Demo output matches:', a.equals(b))"
-```
-
 ### Expected run time
 
-Under **10 seconds** on a normal desktop computer (about 2 seconds in our tests).
+Under **1 minutes** on a normal desktop computer.
 
 ---
 
@@ -238,16 +226,19 @@ Gene IDs are matched without version suffixes (e.g. `ENSG00000123456`). The regu
 
 ## 5. Reproducing the manuscript results
 
-1. Download the full input data from [Google Drive](https://drive.google.com/drive/folders/1RJ4trF80l1EB1QPKqEd6tzfh85SNfbxg?usp=share_link).
-2. Place the downloaded `Data` folder in the repository root, so that the layout matches [Input data layout](#input-data-layout).
-3. Run:
+1. Download the full input data from [Google Drive]
+(https://drive.google.com/drive/folders/1NhVzUIolBcVEv9NFzGghtSR7JQLsfUUK?usp=sharing).
+
+2. Download reference genome and put in Genomic_ref subfolder. In this project, we use GRCh38.primary_assembly.genome.fa and gencode.v47.long_noncoding_RNAs.gtf      
+5. Place the downloaded `Data` folder in the repository root, so that the layout matches [Input data layout](#input-data-layout).
+6. Run:
 
    ```bash
    python Code/01_generate_scoring.py
    python Code/02_combine_ars_score.py
    ```
 
-4. The ARS scores for all driver-lncRNA SNVs are written to `Data/VariantImpactScore/ARS_scored_driver_variants.csv`, and the ARS distribution figure is written to `Data/VariantImpactScore/ars_distribution_1000dpi.png`.
+7. The ARS scores for all driver-lncRNA SNVs are written to `Data/VariantImpactScore/ARS_scored_driver_variants.csv`, and the ARS distribution figure is written to `Data/VariantImpactScore/ars_distribution_1000dpi.png`.
 
 ---
 
@@ -259,6 +250,7 @@ This project is released under the [MIT License](LICENSE), an [Open Source Initi
 
 If you use this pipeline, please cite:
 
+[TO-BE-UPDATED-SOON please email me].
 > Uthayopas, K., *et al.* (2026). *[Manuscript title].* *[Journal]*. DOI: *[to be added]*
 
 ## Contact
