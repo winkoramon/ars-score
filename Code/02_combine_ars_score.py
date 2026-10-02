@@ -1,4 +1,5 @@
 import os
+import argparse
 import pickle
 import numpy as np
 import pandas as pd
@@ -9,9 +10,22 @@ from matplotlib.ticker import MaxNLocator
 # ==========================================
 # 1. CONFIGURATION & FILE PATHS
 # ==========================================
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Combine structure, accessibility and regulatory annotations into the ARS score.")
+    parser.add_argument("--data-dir", default=os.environ.get("ARS_DATA_DIR", "./Data"),
+                        help="Folder containing the input data (default: ./Data)")
+    parser.add_argument("--out-dir", default=None,
+                        help="Output folder (default: <data-dir>/VariantImpactScore)")
+    parser.add_argument("--regmap", default=None,
+                        help="Regulatory annotation table (default: ./Code/regulatory_summary/"
+                             "Table_S1_SNV_annotations.csv, or <data-dir>/regulatory_summary/... if present)")
+    return parser.parse_args()
+
+ARGS = parse_args()
 PROJECT_FOLDER = './'
-DATA_DIR = os.path.join(PROJECT_FOLDER, 'Data')
-OUTDIR = os.path.join(DATA_DIR, 'VariantImpactScore')
+DATA_DIR = ARGS.data_dir
+OUTDIR = ARGS.out_dir or os.path.join(DATA_DIR, 'VariantImpactScore')
 os.makedirs(OUTDIR, exist_ok=True)
 
 # Input files
@@ -22,7 +36,9 @@ MTV_SNV_PATH = os.path.join(DATA_DIR, 'Driver_lncRNA/multivariate_snv_esults.pkl
 
 RNASNP_PATH = os.path.join(DATA_DIR, 'RNAstructure/input/RNAsnp_combined_results.csv')
 RNAPLFOLD_PATH = os.path.join(DATA_DIR, 'RNAstructure/input/RNAplfold_accessibility_changes.csv')
-REG_MAP_PATH = os.path.join(PROJECT_FOLDER, 'Code/regulatory_summary/Table_S1_SNV_annotations.csv')
+_REG_IN_DATA = os.path.join(DATA_DIR, 'regulatory_summary/Table_S1_SNV_annotations.csv')
+REG_MAP_PATH = ARGS.regmap or (_REG_IN_DATA if os.path.exists(_REG_IN_DATA)
+                               else os.path.join(PROJECT_FOLDER, 'Code/regulatory_summary/Table_S1_SNV_annotations.csv'))
 TF_MOTIF_PATH = os.path.join(DATA_DIR, 'TF_motif/tf_motif_disruption/per_snv_tf_calls_STRONG.csv')
 
 # TF Families defined in the pipeline

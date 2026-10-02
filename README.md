@@ -1,12 +1,15 @@
 # ARS Pipeline: A Framework for Functional lncRNA Variant Prioritization
 
-Developed by **Korawich Uthayopas**, Ancestry and Health Genomics Laboratory, University of Sydney.
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)
 
+Developed by **Korawich Uthayopas**, Ancestry and Health Genomics Laboratory, University of Sydney.
 
-The **Accessibility, Regulation, and Structure (ARS)** framework is designed to identify and prioritize functional somatic variants within long non-coding RNAs (lncRNAs), specifically optimized for geo-ancestrally diverse prostate cancer cohorts.
+The **Accessibility, Regulation and Structure (ARS)** framework identifies and prioritizes functional somatic variants within long non-coding RNAs (lncRNAs). It was designed for, and applied to, geo-ancestrally diverse prostate cancer cohorts.
+
+A complete description of the algorithm, including pseudocode, is provided in the **Supplementary Information** of the accompanying manuscript.
+
+---
 
 ## Contents
 
@@ -72,7 +75,11 @@ ars-score/
 The software is pure Python and runs on Linux and macOS.
 
 | Tested on | Version |
-| macOS | 15.7.7 
+|---|---|
+| Linux | Ubuntu 24.04 LTS |
+| macOS | *(add the macOS version you used)* |
+
+Windows is not officially supported because `pysam` does not provide native Windows builds; Windows users can run the pipeline via WSL2.
 
 ### Software dependencies
 
@@ -93,8 +100,8 @@ The structural and accessibility inputs used in the manuscript were produced wit
 
 | Tool | Used for | Version |
 |---|---|---|
-| RNAsnp | SNV effects on RNA secondary structure |
-| ViennaRNA (RNAplfold) | Base-pairing / accessibility probabilities |
+| RNAsnp | SNV effects on RNA secondary structure | *(add version)* |
+| ViennaRNA (RNAplfold) | Base-pairing / accessibility probabilities | *(add version)* |
 
 ### Hardware
 
@@ -129,13 +136,13 @@ pip install -r requirements.txt
 
 ### Typical install time
 
-Under **2 minutes** on a normal desktop computer with a broadband connection. Installing the dependencies into a clean virtual environment took about 1 minute in our tests.
+Under **2 minutes** on a normal desktop computer with a broadband connection. Installing the dependencies into a clean virtual environment took about 20 seconds in our tests.
 
 ---
 
 ## 3. Demo
 
-A small, fully **simulated** dataset is provided. For a privacy, it contains no patient data. 
+A small, fully **simulated** dataset is provided in [`demo/Data`](demo/Data): 60 SNVs in three synthetic lncRNAs on a 20 kb synthetic contig, with simulated RNAsnp, RNAplfold, regulatory and TF-motif results. It contains no patient data. It can be regenerated with `python demo/make_demo_data.py` (fixed random seed).
 
 ### Instructions to run on the demo data
 
@@ -252,9 +259,8 @@ This project is released under the [MIT License](LICENSE), an [Open Source Initi
 
 If you use this pipeline, please cite:
 
-> Uthayopas, K., *et al.* (2026). Currently under revision
-> 
+> Uthayopas, K., *et al.* (2026). *[Manuscript title].* *[Journal]*. DOI: *[to be added]*
+
 ## Contact
 
-For questions or issues, please open an [issue](https://github.com/winkoramon/ars-score/issues) or contact Korawich Uthayopas (Ancestry and Health Genomics Laboratory, University of Sydney): korawich.uthayopas@sydney.edu.au
-
+For questions or issues, please open an [issue](https://github.com/winkoramon/ars-score/issues) or contact Korawich Uthayopas (Ancestry and Health Genomics Laboratory, University of Sydney).

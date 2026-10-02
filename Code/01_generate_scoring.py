@@ -1,4 +1,5 @@
 import os
+import argparse
 import re
 import math
 import pickle
@@ -11,8 +12,16 @@ from tqdm import tqdm
 # ==========================================
 # 1. CONFIGURATION & FILE PATHS
 # ==========================================
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Map SNVs to representative lncRNA transcripts and prepare inputs for ARS scoring.")
+    parser.add_argument("--data-dir", default=os.environ.get("ARS_DATA_DIR", "./Data"),
+                        help="Folder containing the input data (default: ./Data)")
+    return parser.parse_args()
+
+ARGS = parse_args()
 PROJECT_FOLDER = './' # Assuming running from repo root
-DATA_DIR = os.path.join(PROJECT_FOLDER, 'Data')
+DATA_DIR = ARGS.data_dir
 
 SNV_PATH = os.path.join(DATA_DIR, 'pca+_447_samples_snv_v6.csv')
 DICT_PATH = os.path.join(DATA_DIR, 'driver_lncRNA_dict.pkl')
